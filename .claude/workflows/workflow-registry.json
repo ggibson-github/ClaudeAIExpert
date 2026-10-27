@@ -1,0 +1,10 @@
+{
+  "workflows": {
+    "developer": {
+      "name": "Developer Pipeline (Greenfield & Iterative Features)",
+      "description": "Full SDLC: spec → HLD → DD → implementation → testing",
+      "instruction_file": ".claude/workflows/developer.md",
+      "initial_phase": "spec"
+    }
+  }
+}

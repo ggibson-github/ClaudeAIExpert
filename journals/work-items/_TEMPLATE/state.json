@@ -1,0 +1,10 @@
+{
+  "active": ["work-item"],
+  "nodes": {
+    "work-item": {
+      "parent": null,
+      "status": "open",
+      "history": []
+    }
+  }
+}

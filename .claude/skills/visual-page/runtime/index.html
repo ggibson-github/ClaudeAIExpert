@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shared page</title>
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      font: 15px/1.4 "Segoe UI", sans-serif;
+      color: #1c1c1c;
+      background: #f3f4f6;
+      display: flex;
+      flex-direction: column;
+    }
+    header { padding: 14px 18px 0; }
+    h1 { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
+    p { margin: 0; color: #5c6570; }
+    #language { font-size: 12px; letter-spacing: 0.02em; color: #5c6570; margin-top: 6px; }
+    #toolbar, #palette, #hint { padding: 8px 18px 0; }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    button, input[type="range"] { font: inherit; font-size: 14px; }
+    button {
+      padding: 6px 10px;
+      border: 1px solid #8a8f98;
+      background: #fff;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    button.on { border-color: #0b57d0; color: #0b57d0; }
+    button:disabled { color: #9aa1aa; cursor: default; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+    .blue { background: #0b57d0; } .red { background: #c5221f; }
+    .green { background: #188038; } .orange { background: #e37400; }
+    #board-wrap { flex: 1; min-height: 420px; margin: 12px 18px 18px; background: #fff; border: 1px solid #d5d8de; }
+    #board {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-image: linear-gradient(#eceff3 1px, transparent 1px), linear-gradient(90deg, #eceff3 1px, transparent 1px);
+      background-size: 24px 24px;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    #hint { color: #5c6570; font-size: 13px; padding-bottom: 4px; }
+    #scrubber { width: 160px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">Shared page</h1>
+    <p id="caption">Waiting for a picture from the conversation.</p>
+    <div id="language"></div>
+  </header>
+  <div id="toolbar">
+    <div class="row">
+      <button id="undo" type="button">Undo</button>
+      <button id="redo" type="button">Redo</button>
+      <button id="connect" type="button">Draw an arrow</button>
+      <button id="reverse" type="button">Reverse arrow</button>
+      <button id="delete" type="button">Delete</button>
+      <button id="route" type="button">Route the token</button>
+      <button id="play" type="button">Play</button>
+      <input id="scrubber" type="range" min="0" max="0" step="0.05" value="0">
+    </div>
+  </div>
+  <div id="palette" class="row"></div>
+  <div class="row" id="colors">
+    <span id="hint">Drag an item. Draw an arrow, then reverse or delete it. Circle something to point it out, then say in chat what you meant.</span>
+  </div>
+  <div class="row" style="padding: 8px 18px 0">
+    <button type="button" data-color="blue"><span class="dot blue"></span>Blue</button>
+    <button type="button" data-color="red"><span class="dot red"></span>Red</button>
+    <button type="button" data-color="green"><span class="dot green"></span>Green</button>
+    <button type="button" data-color="orange"><span class="dot orange"></span>Orange</button>
+  </div>
+  <div id="board-wrap">
+    <svg id="board">
+      <defs id="defs"></defs>
+      <g id="camera"></g>
+    </svg>
+  </div>
+  <script src="/layout.js"></script>
+  <script src="/languages/flow.js"></script>
+  <script src="/languages/class.js"></script>
+  <script src="/languages/chart.js"></script>
+  <script src="/languages/timeline.js"></script>
+  <script src="/languages/places.js"></script>
+  <script src="/render.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+# My Role Definition
+
+**Role status:** pending
+
+**Role Title:** [Your role, e.g., "Senior Software Engineer", "Manager"]
+
+**Responsibilities:**
+- [Key responsibility 1 - e.g., "Design and implement backend services"]
+- [Key responsibility 2 - e.g., "Maintain production systems and respond to incidents"]
+- [Key responsibility 3 - e.g., "Review code and mentor junior developers"]
+
+---
+
+# Primary Workflows (Pipelines)
+
+## Pipeline 1: Developer Pipeline (Greenfield & Iterative Features)
+
+**When to use:** New feature development, greenfield projects, planned enhancements that require architectural planning
+
+**Phases:** spec-parser → hld-writer → dd-writer → task-breakdown → scaffold → implement → test → commit
+
+**Human gates:**
+- HLD approval (after HLD + diagrams complete)
+- DD approval (after DD + diagrams complete)
+- Feature design approval (for iterative features)
+
+**Characteristics:**
+- Full design phase with architecture planning
+- High-Level Design (HLD) and Detailed Design (DD) documents
+- Comprehensive testing (unit, integration, E2E)
+- Suitable for work requiring new architecture or significant design decisions
+
+---
+
+## Pipeline 2: Adhoc Incident Response
+
+**When to use:** Production incidents, urgent bugs, hotfixes
+
+**Phases:** gather-context → reproduce-issue → implement-fix → test → deploy → document
+
+**Human gates:**
+- Fix approach approval (before implementing fix)
+- Deployment approval (before pushing to production)
+
+**Characteristics:**
+- NO HLD/DD phase (assumes existing architecture is known)
+- Fast iteration focused on immediate resolution
+- Minimal documentation during incident; post-incident documentation after resolution
+- Streamlined testing focused on the specific fix
+
+---
+
+## Pipeline 3: [Future Custom Pipelines]
+
+**When to use:** [Define criteria as your role evolves - e.g., "Refactoring existing code", "Performance optimization", "Security audit"]
+
+**Phases:** [Custom phase sequence - will be defined over time based on observed workflow patterns]
+
+**Human gates:** [Custom gates]
+
+**Characteristics:** [Distinguishing features]
+
+---
+
+# Pipeline Selection Guidance
+
+- **Developer Pipeline:** Use when the Work Item requires new architecture, significant design decisions, or planned feature development. Examples: new microservice, new feature with UI changes, database schema additions.
+- **Adhoc Incident Response:** Use when the Work Item is an urgent production issue with known architecture. Examples: prod bug, customer escalation, hotfix, service outage.
+- **Custom Pipelines:** [Add guidance as new pipelines are defined]
+
+---
+
+# Notes
+
+This file starts as the developer starter pack. While Role status is pending, the first "start" or "continue" runs define-role before any Work Item. That process asks for the specific job, which workflows and skills apply, and any notes you already have from doing the work. "I approve the role" rewrites this file and sets Role status to defined. "Skip role definition" keeps this starter pack and sets Role status to skipped.
+
+This file also evolves over time:
+- As you work on more Work Items, patterns will emerge
+- The expert will proactively detect new workflow patterns and propose new pipelines
+- You can manually edit this file to add/update pipelines at any time
+- Pipeline definitions help the expert understand when to use full design phases vs streamlined workflows

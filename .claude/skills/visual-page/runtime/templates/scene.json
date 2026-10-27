@@ -1,0 +1,17 @@
+{
+  "rev": 1,
+  "language": "flow",
+  "title": "Shared page",
+  "caption": "Waiting for a picture from the conversation.",
+  "theme": "enterprise",
+  "layout": "layered",
+  "interactive": false,
+  "nodes": [],
+  "edges": [],
+  "groups": [],
+  "annotations": [],
+  "tokens": [],
+  "data": null,
+  "chart": "",
+  "timeline": { "duration": 0, "tracks": [] }
+}
